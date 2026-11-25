@@ -4,10 +4,6 @@ A SIEM I set up in Azure to learn how security monitoring and detection actually
 
 I'm using it to practice writing detection rules, triaging alerts, and eventually feeding its vulnerability findings into my [vulnerability prioritization tool](https://github.com/jeremywhitlockk/vulnerability-prioritization-tool).
 
-![Wazuh Threat Hunting showing failed SSH login alerts](docs/images/ssh-failed-login-alerts.png)
-
-*My first detection test: failed SSH logins against the server, caught by Wazuh rule 5710, alongside alerts from my Mac's agent.*
-
 ## Setup
 
 ```mermaid
@@ -25,6 +21,12 @@ flowchart LR
 - **Cost:** free, running on Azure for Students credit
 
 I ran it in the cloud because my laptop only has 8 GB of RAM, which isn't enough to run Wazuh and a machine for it to monitor at the same time.
+
+## What it looks like
+
+![Wazuh Threat Hunting showing failed SSH login alerts](docs/images/ssh-failed-login-alerts.png)
+
+*My first detection test: failed SSH logins against the server, caught by Wazuh rule 5710, alongside alerts from my Mac's agent.*
 
 ## Security choices
 
