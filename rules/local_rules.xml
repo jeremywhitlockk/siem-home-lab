@@ -1,0 +1,21 @@
+<!--
+  Custom Wazuh rules.
+  On the server these live in /var/ossec/etc/rules/local_rules.xml.
+  Custom rule IDs start at 100000 so they don't clash with built-in rules.
+
+  Status: drafted, not deployed or tested yet.
+-->
+
+<group name="local,custom,">
+
+  <!-- Brute force: 5 failed logins from the same IP within 60 seconds -->
+  <rule id="100100" level="10" frequency="5" timeframe="60">
+    <if_matched_group>authentication_failed</if_matched_group>
+    <same_srcip />
+    <description>Possible brute force: 5 failed logins from one IP in 60 seconds</description>
+    <mitre>
+      <id>T1110</id>
+    </mitre>
+  </rule>
+
+</group>
